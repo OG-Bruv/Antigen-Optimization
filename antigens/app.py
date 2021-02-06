@@ -1,3 +1,4 @@
+from numpy import index_exp
 import pandas as pd
 
 ideal_antigen = []
@@ -41,8 +42,10 @@ for z in mhc:
     for x in bantigen:
         for a in range(x, x+25):
             if z == a:
-                ideal_antigen.append(x)
+                if x not in ideal_antigen:
+                    ideal_antigen.append(x)
 # Selects MHC II antigens from B antigens
+ideal_antigen.sort()
 
 print(str(ideal_antigen))
 # Prints the start points of peptides with B and MHC II epitopes
