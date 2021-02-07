@@ -1,4 +1,3 @@
-from numpy import index_exp
 import pandas as pd
 
 ideal_antigen = []
